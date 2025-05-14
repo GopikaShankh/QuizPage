@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Category Selection Screen -->
+  <div id="category-container">
+    <div class="h1">
+      <h1>Select a Category</h1>
+    </div>
+    <div id="categories"></div>
+  </div>
+
+  <!-- Quiz Screen -->
+  <div id="quiz-container" style="display: none;">
+    <div id="quiz-header">
+      <h1>Quiz</h1>
+    </div>
+
+    <!-- Timer Display -->
+    <div class="timer" id="timer">15</div>
+
+    <div id="feedback-container" style="display: none;"></div>
+
+    <div id="question-container">
+      <div id="question-box"></div>
+      <div id="answers-container"></div>
+    </div>
+
+    <div id="navigation-buttons">
+      <button id="next-button" class="btn" onclick="loadNextQuestion()">Skip</button>
+      <button id="back-button" class="btn" onclick="goBackToCategories()">Back to Home</button>
+    </div>
+  </div>
+
+  <!-- Result Screen -->
+  <div id="result-container" style="display: none;">
+    <h2>Quiz Completed!</h2>
+    <h3 class="h3">Your score: <span id="final-score">0</span> out of <span id="total-questions">10</span></h3>
+    <p class="paragraph">Correct Answers: <span id="correct-answers">0</span></p>
+    <p class="paragraph">Incorrect Answers: <span id="incorrect-answers">0</span></p>
+    <h4 class="h4">Correctly Answered Questions:</h4>
+    <ul id="correct-question-list"></ul>
+    <button id="restart" onclick="location.reload()">Restart</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
